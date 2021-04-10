@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Digitals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @digitals.each do |digital| %>
+      <tr>
+        <td><%= digital.product_id %></td>
+        <td><%= link_to 'Show', digital %></td>
+        <td><%= link_to 'Edit', edit_digital_path(digital) %></td>
+        <td><%= link_to 'Destroy', digital, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Digital', new_digital_path %>

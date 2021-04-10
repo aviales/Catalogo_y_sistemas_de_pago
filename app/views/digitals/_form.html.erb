@@ -1,0 +1,22 @@
+<%= form_with(model: digital, local: true) do |form| %>
+  <% if digital.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(digital.errors.count, "error") %> prohibited this digital from being saved:</h2>
+
+      <ul>
+        <% digital.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.text_field :product_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
